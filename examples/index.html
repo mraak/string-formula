@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <title>calc</title>
+
+  <script src="jquery-1.9.1.js"></script>
+  <script src="..src/index.js"></script>
+  <script>
+
+
+
+    $(document).ready(function () {
+
+      console.log("ready");
+
+      $("#btnAdd").click(function (e) {
+        addElements(".calc", "#t3");
+      });
+
+      $("#btnRemove").click(function (e) {
+        removeElements(".calc", "#t3");
+      });
+
+      $("#out").html('output');
+
+      addElements(".calc", "#t3");
+
+      //$("#t4").val("5+5");
+
+      setExpression("t1", "=2+t3");
+      // setExpression("t4","=5+5-t1");
+      // setExpression("t3","8");
+
+      var c1 = calc({ i: 1 });
+      var c2 = calc({ i: 2 });
+      c1.sayI();
+      c2.sayI();
+
+    });
+
+  </script>
+
+
+</head>
+
+<body>
+  <div id="out"></div>
+  <input type="text" id="t1" class="calc" value="3"></input>
+  <br>
+  <input type="text" id="t2" class="calc"></input>
+  <br>
+  <input type="text" id="t3" value="4"></input>
+  <br>
+  <button id="btnAdd">Add</button>
+  <br>
+  <button id="btnRemove">Remove</button>
+  <br>
+  <br>
+  <input type="text" id="t4" class="calc"></input>
+  <br>
+  <button id="btnSolve">Solve</button>
+  <br>
+
+</body>
+
+</html>
