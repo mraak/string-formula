@@ -411,6 +411,8 @@ function setExpression(targetId, expression, update) {
 
   co.val = _val;
   console.log('set expression', co, _val);
+
+  //TODO: decouple from jquery
   $("#" + co.id).val(_val);
 
   //console.log("elms", elements);
@@ -630,24 +632,24 @@ function isString(input) {
 
 
 (function (undefined) {
-  console.log("fancy");
+  console.log("calc instance");
 
   //var calc;
 
-  var i;
+  var id;
 
   function makeCalc(config) {
     console.log("make calc");
   };
 
   calc = function (config) {
-    i = config.i;
+    id = config.id;
     //console.log("fancy calc");
 
     return calc;
   };
-  calc.sayI = function () {
-    console.log(i);
+  calc.getId = function () {
+    console.log(id);
   }
 
 

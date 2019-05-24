@@ -2,9 +2,17 @@
 
 <head>
   <title>calc</title>
-
+  <style>
+    .out{
+      width: 300px;
+      height: 150px;
+      border: 1px dotted black;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
   <script src="jquery-1.9.1.js"></script>
-  <script src="..src/index.js"></script>
+  <script src="../src/index.js"></script>
   <script>
 
 
@@ -12,29 +20,22 @@
     $(document).ready(function () {
 
       console.log("ready");
+      addElements("#t1", "#t2", "#t3", "#t5", "#out");
+      // removeElements("#t1", "#t2", "#t3", "#t5", "#out");
 
-      $("#btnAdd").click(function (e) {
-        addElements(".calc", "#t3");
+
+      //TODO: finish possibility of multiple instances
+      var c1 = calc({ id: 1 });
+      var c2 = calc({ id: 2 });
+      c1.getId();
+      c2.getId();
+
+
+      $("#btnSolve").click(function (e) {
+        // var res = solve("=4+4")
+        var exp = $("#t4").val()
+        setExpression("t5", exp);
       });
-
-      $("#btnRemove").click(function (e) {
-        removeElements(".calc", "#t3");
-      });
-
-      $("#out").html('output');
-
-      addElements(".calc", "#t3");
-
-      //$("#t4").val("5+5");
-
-      setExpression("t1", "=2+t3");
-      // setExpression("t4","=5+5-t1");
-      // setExpression("t3","8");
-
-      var c1 = calc({ i: 1 });
-      var c2 = calc({ i: 2 });
-      c1.sayI();
-      c2.sayI();
 
     });
 
@@ -44,22 +45,22 @@
 </head>
 
 <body>
+  
+  t1:<input type="text" id="t1" value="3"></input>
+  <br>
+  t2:<input type="text" id="t2" value="0.5"></input>
+  <br>
+  t3:<input type="text" id="t3" value="4"></input>
+  <br>
+  <br>
+  t5 expression:<input type="text" id="t4" value="=2+t3"></input>
+  <br>
+  t5 result:<input type="text" id="t5" disabled="true"></input>
+  <br>
+  <button id="btnSolve">Set Expression</button>
+  <br>
+  <br>
   <div id="out"></div>
-  <input type="text" id="t1" class="calc" value="3"></input>
-  <br>
-  <input type="text" id="t2" class="calc"></input>
-  <br>
-  <input type="text" id="t3" value="4"></input>
-  <br>
-  <button id="btnAdd">Add</button>
-  <br>
-  <button id="btnRemove">Remove</button>
-  <br>
-  <br>
-  <input type="text" id="t4" class="calc"></input>
-  <br>
-  <button id="btnSolve">Solve</button>
-  <br>
 
 </body>
 
