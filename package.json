@@ -1,0 +1,25 @@
+{
+  "name": "string-formula",
+  "version": "0.1.0",
+  "description": "Calculates Excel-like formulas supplied as strings, where you can use any value or DOM element as input or the output of the formulas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mraak/string-formula.git"
+  },
+  "keywords": [
+    "excel",
+    "spreadsheet",
+    "formula",
+    "expression"
+  ],
+  "author": "alenb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mraak/string-formula/issues"
+  },
+  "homepage": "https://github.com/mraak/string-formula#readme"
+}
